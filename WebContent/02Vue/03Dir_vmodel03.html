@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03Dir_vmodel03</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        /*
+        시나리오] checkbox와 v-model의 특징을 이용하여
+        주문 할 음식과 가격을 계산하여 총 비용을 출력 처리하세요,
+
+        -- 코스모 중국집 주문 --
+        []짜장면(4000), []짬뽕(5000), []탕수육(12000)
+        []양쟝피(25000), []볶음밥(6000)
+        1단계(주문내용) : 짜장면, 양쟝피 ... 등
+        2단계 (총비용) : @@@ 원
+        */
+        $(function(){
+            var vue = new Vue({
+                el:'#app',
+                data:{
+                    title:'디렉티브 : v-model -> 체크박스 활용하기',
+                    fruits : ['기본']
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="app">
+        <h2>{{title}}</h2>
+
+        <h3>좋아하는 과일을 선택하세여</h3>
+        <input type="checkbox" value="사과" v-model="fruits">사과
+        <input type="checkbox" value="키위" v-model="fruits">키위
+        <input type="checkbox" value="포도" v-model="fruits">포도
+        <input type="checkbox" value="수박" v-model="fruits">수박
+        <input type="checkbox" value="으히히힝" v-model="fruits">참외
+
+        <div>
+            선택한 과일 : <span v-html='fruits'></span>
+        </div>
+</body>
+</html>
